@@ -11,8 +11,8 @@ $script_path = dir "$($myInvocation.MyCommand.Definition)"
 $script_path = $script_path.DirectoryName
 
 # Define variables
-$base_url="https://github.com/grafana/alloy/releases/download/$version/"
-$filename = "alloy-windows-installer-amd64.exe.zip"
+$base_url="https://github.com/grafana/alloy/releases/download/$version"
+$filename = "alloy-installer-windows-amd64.exe.zip"
 $url = "$base_url/$filename"
 $zip_file = "$script_path\$filename"
 $date = Get-Date -Format "yyyyMMdd"
@@ -34,5 +34,5 @@ New-Item -Path "$env:TEMP\salt-alloy" -Type Directory | Out-Null
 
 Get-ChildItem $zip_file | Expand-Archive -DestinationPath "$env:TEMP\salt-alloy" -Force
 
-& "$env:TEMP\salt-alloy\alloy-windows-installer-amd64.exe /S /DISABLEREPORTING=yes"
+& "$env:TEMP\salt-alloy\alloy-installer-windows-amd64.exe" /S /DISABLEREPORTING=yes
 
