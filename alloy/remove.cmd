@@ -1,0 +1,1 @@
+& %PROGRAMFILES64%\GrafanaLabs\Alloy\uninstaller.exe /S

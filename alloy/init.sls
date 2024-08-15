@@ -5,12 +5,12 @@
 # - install.ps1
 # - remove.cmd
 
-{% set versions = ['v1.3.0'] %}
+{% set versions = ['v1.2.0', 'v1.2.1', 'v1.3.0'] %}
 
-packetbeat:
+alloy:
 {% for version in versions %}
   '{{ version }}':
-    full_name: 'Packetbeat'
+    full_name: 'Grafana Alloy'
     installer: 'salt://win/repo-ng/salt-winrepo-ng/_/grafana-alloy/install.cmd'
     install_flags: {{ version }}
     uninstaller: 'salt://win/repo-ng/salt-winrepo-ng/_/grafana-alloy/remove.cmd'
