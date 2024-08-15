@@ -34,5 +34,5 @@ New-Item -Path "$env:TEMP\salt-alloy" -Type Directory | Out-Null
 
 Get-ChildItem $zip_file | Expand-Archive -DestinationPath "$env:TEMP\salt-alloy" -Force
 
-& "$env:TEMP\salt-alloy\alloy-installer-windows-amd64.exe" /S /DISABLEREPORTING=yes
+& "$env:TEMP\salt-alloy\alloy-installer-windows-amd64.exe" /S /DISABLEREPORTING=yes | Out-Null
 
