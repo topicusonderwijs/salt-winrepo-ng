@@ -16,3 +16,9 @@ alloy:
     uninstaller: 'salt://win/repo-ng/salt-winrepo-ng/_/alloy/remove.cmd'
     cache_dir: True
 {% endfor %}
+  latest:
+    full_name: 'Grafana Alloy'
+    installer: 'salt://win/repo-ng/salt-winrepo-ng/_/alloy/install.cmd'
+    install_flags: 'v1.3.0'
+    uninstaller: 'salt://win/repo-ng/salt-winrepo-ng/_/alloy/remove.cmd'
+    cache_dir: True
