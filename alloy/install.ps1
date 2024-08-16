@@ -38,12 +38,8 @@ Get-ChildItem $zip_file | Expand-Archive -DestinationPath "$env:TEMP\salt-alloy"
 
 $RegistryPath = "HKLM:\Software\GrafanaLabs\Alloy"
 
-$RegistryValue = "run`r`n
-C:\Program Files\GrafanaLabs\Alloy\config.alloy`r`n
---storage.path=C:\ProgramData\GrafanaLabs\Alloy\data`r`n
---disable-reporting`r`n
---server.http.listen-addr=0.0.0.0:12345"
+$RegistryValue = @('run', 'C:\Program Files\GrafanaLabs\Alloy\config.alloy', '--storage.path=C:\ProgramData\GrafanaLabs\Alloy\data', '--disable-reporting', '--server.http.listen-addr=0.0.0.0:12345')
 
 Set-ItemProperty -Path $RegistryPath -Name "Arguments" -Value $RegistryValue
 
-
+Restart-Service -Name Alloy
