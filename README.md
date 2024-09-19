@@ -31,3 +31,14 @@ git clone --origin upstream https://github.com/saltstack/salt-winrepo-ng.git
 cd salt-winrepo-ng
 pre-commit install
 ```
+Deploying updated packages
+----------
+To deploy changes done in the WinRepo-NG, the following steps should be taken.
+On the salt master the following command should be executed:
+```bash
+salt-run winrepo.update_git_repos
+```
+Afterwards the next command should be run, to update the packages on all Windows Minions
+```bash
+salt -G@kernel:Windows' pkg.refresh_db
+```
