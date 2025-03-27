@@ -1,4 +1,4 @@
-# Script to download, unzip, and setup Packetbeat
+# Script to download, unzip, and setup Grafana Alloy
 # Called by install.cmd
 
 # Load parameters
@@ -43,3 +43,15 @@ $RegistryValue = @('run', 'C:\Program Files\GrafanaLabs\Alloy\config.alloy', '--
 Set-ItemProperty -Path $RegistryPath -Name "Arguments" -Value $RegistryValue
 
 Restart-Service -Name Alloy
+
+# Calculate installation size
+$size = (Get-ChildItem "$env:ProgramFiles\GrafanaLabs\Alloy" | Measure Length -Sum).Sum /1KB
+
+#Make registry entries
+New-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall" -Name "Alloy" | Out-Null
+New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Alloy" -Name "DisplayName" -Value "Grafana Alloy" | Out-Null
+New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Alloy" -Name "DisplayVersion" -Value "$version" | Out-Null
+New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Alloy" -Name "UninstallString" -Value "Managed by Salt" | Out-Null
+New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Alloy" -Name "Publisher" -Value "Grafana Labs" | Out-Null
+New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Alloy" -Name "InstallDate" -Value $date | Out-Null
+New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Alloy" -Name "EstimatedSize" -Value $size -PropertyType "DWord" | Out-Null
