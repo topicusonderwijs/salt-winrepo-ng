@@ -10,14 +10,14 @@
 alloy:
 {% for version in versions %}
   '{{ version }}':
-    full_name: 'Alloy'
+    full_name: 'Grafana Alloy'
     installer: 'salt://win/repo-ng/salt-winrepo-ng/_/alloy/install.cmd'
     install_flags: {{ version }}
     uninstaller: 'salt://win/repo-ng/salt-winrepo-ng/_/alloy/remove.cmd'
     cache_dir: True
 {% endfor %}
   latest:
-    full_name: 'Alloy'
+    full_name: 'Grafana Alloy'
     installer: 'salt://win/repo-ng/salt-winrepo-ng/_/alloy/install.cmd'
     install_flags: 'v1.3.1'
     uninstaller: 'salt://win/repo-ng/salt-winrepo-ng/_/alloy/remove.cmd'
