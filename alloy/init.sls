@@ -14,6 +14,8 @@
   'v1.7.0', 'v1.7.1', 'v1.7.2', 'v1.7.3', 'v1.7.4', 'v1.7.5',
   'v1.8.0', 'v1.8.1', 'v1.8.1', 'v1.8.2', 'v1.8.3'] %}
 
+{% set latest = versions|last %}
+
 alloy:
 {% for version in versions %}
   '{{ version }}':
@@ -26,6 +28,6 @@ alloy:
   latest:
     full_name: 'Grafana Alloy'
     installer: 'salt://win/repo-ng/salt-winrepo-ng/_/alloy/install.cmd'
-    install_flags: 'v1.3.1'
+    install_flags: {{ latest }}
     uninstaller: 'salt://win/repo-ng/salt-winrepo-ng/_/alloy/remove.cmd'
     cache_dir: True
