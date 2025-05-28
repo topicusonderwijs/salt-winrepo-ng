@@ -7,7 +7,7 @@
 
 {% import_yaml "versions.yaml" as versions %}
 
-{% set latest = versions|last %}
+{% set latest = versions|first %}
 
 alloy:
 {% for version in versions %}
