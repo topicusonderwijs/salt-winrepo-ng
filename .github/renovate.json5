@@ -7,6 +7,9 @@
     "helpers:pinGitHubActionDigestsToSemver",
     "customManagers:githubActionsVersions",
   ],
+  enabledManagers: [
+    "custom.regex"
+  ],
   customManagers: [{
       "customType": "regex",
       "managerFilePatterns": ["**/versions.yaml"],
