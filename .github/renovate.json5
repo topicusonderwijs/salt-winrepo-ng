@@ -7,6 +7,7 @@
     "helpers:pinGitHubActionDigestsToSemver",
     "customManagers:githubActionsVersions",
   ],
+  printConfig: true,
   enabledManagers: [
     "custom.regex"
   ],
