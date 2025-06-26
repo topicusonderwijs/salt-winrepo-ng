@@ -1,5 +1,6 @@
 # renovate: datasource=github-releases depName=alloy packageName=grafana/alloy
-- 'v1.8.2' 
+- 'v1.9.1'
+- 'v1.8.2'
 - 'v1.8.1' 
 - 'v1.8.1' 
 - 'v1.8.0' 
