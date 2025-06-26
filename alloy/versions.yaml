@@ -1,4 +1,4 @@
-# renovate: datasource=github-releases depName=grafana/alloy packageName=grafana/alloy
+# renovate: datasource=github-releases depName=alloy packageName=grafana/alloy
 - 'v1.8.2' 
 - 'v1.8.1' 
 - 'v1.8.1' 
