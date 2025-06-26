@@ -7,11 +7,10 @@
     "helpers:pinGitHubActionDigestsToSemver",
     "customManagers:githubActionsVersions",
   ],
-  printConfig: true,
-  enabledManagers: [
+  "enabledManagers": [
     "custom.regex"
   ],
-  customManagers: [{
+  "customManagers": [{
       "customType": "regex",
       "managerFilePatterns": ["**/versions.yaml"],
       "matchStrings": [
@@ -20,7 +19,7 @@
       "autoReplaceStringTemplate": "# renovate: datasource={{{datasource}}} depName={{{depName}}}{{#unless (equals depName packageName)}} packageName={{{packageName}}}{{/unless}}\n- '{{{newValue}}}'\n- '{{{currentValue}}}'",
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}loose{{/if}}",
   }],
-  packageRules: [
+  "packageRules": [
     {
       "matchFileNames": ["**/versions.yaml"],
       "automerge": true,
