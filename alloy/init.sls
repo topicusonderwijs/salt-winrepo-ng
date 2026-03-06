@@ -5,7 +5,7 @@
 # - install.ps1
 # - remove.cmd
 
-{% import_yaml "versions.yaml" as versions %}
+{% import_yaml tpldir ~ "/versions.yaml" as versions %}
 
 {% set latest = versions|first %}
 
