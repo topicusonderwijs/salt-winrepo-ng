@@ -5,7 +5,35 @@
 # - install.ps1
 # - remove.cmd
 
-{% import_yaml tpldir ~ "/versions.yaml" as versions %}
+{% load_yaml as versions -%}
+# renovate: datasource=github-releases depName=alloy packageName=grafana/alloy
+- 'v1.13.2'
+- 'v1.13.1'
+- 'v1.13.0'
+- 'v1.12.2'
+- 'v1.12.1'
+- 'v1.12.0'
+- 'v1.11.3'
+- 'v1.11.2'
+- 'v1.11.0'
+- 'v1.10.2'
+- 'v1.10.1'
+- 'v1.10.0'
+- 'v1.9.2'
+- 'v1.9.1'
+- 'v1.8.2'
+- 'v1.8.1' 
+- 'v1.8.1' 
+- 'v1.8.0' 
+- 'v1.7.5' 
+- 'v1.7.4' 
+- 'v1.7.3' 
+- 'v1.7.2' 
+- 'v1.7.1' 
+- 'v1.7.0' 
+- 'v1.6.1' 
+- 'v1.6.0' 
+{% endload -%}
 
 {% set latest = versions|first %}
 

@@ -21,7 +21,7 @@
   }],
   "packageRules": [
     {
-      "matchFileNames": ["**/versions.yaml"],
+      "matchFileNames": ["**/*.sls"],
       "automerge": true,
       "commitMessageAction": "add",
       "commitMessageExtra": "{{prettyNewVersion}}",
