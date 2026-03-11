@@ -12,7 +12,7 @@
   ],
   "customManagers": [{
       "customType": "regex",
-      "managerFilePatterns": ["**/versions.yaml"],
+      "managerFilePatterns": ["**/*.sls"],
       "matchStrings": [
         "# renovate: datasource=(?<datasource>[a-z-.]+?) depName=(?<depName>\\S+?)(?: packageName=(?<packageName>\\S+?))(?: versioning=(?<versioning>.*\\S+?))?\\s+- [\"']?(?<currentValue>.+?)[\"']?\\s",
       ],
