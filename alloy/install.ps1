@@ -49,7 +49,7 @@ $size = (Get-ChildItem "$env:ProgramFiles\GrafanaLabs\Alloy" | Measure Length -S
 
 #Make registry entries
 New-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall" -Name "Alloy" | Out-Null
-New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Alloy" -Name "DisplayName" -Value "Grafana Alloy" | Out-Null
+New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Alloy" -Name "DisplayName" -Value "Alloy" | Out-Null
 New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Alloy" -Name "DisplayVersion" -Value "$version" | Out-Null
 New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Alloy" -Name "UninstallString" -Value "Managed by Salt" | Out-Null
 New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Alloy" -Name "Publisher" -Value "Grafana Labs" | Out-Null
