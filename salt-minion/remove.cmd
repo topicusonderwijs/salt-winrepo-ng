@@ -1,0 +1,1 @@
+& %PROGRAMFILES64%\Salt Project\Salt\uninst.exe /S
