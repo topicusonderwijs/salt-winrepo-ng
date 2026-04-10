@@ -19,6 +19,7 @@
       "autoReplaceStringTemplate": "# renovate: datasource={{{datasource}}} depName={{{depName}}}{{#unless (equals depName packageName)}} packageName={{{packageName}}}{{/unless}}\n- '{{{newValue}}}'\n- '{{{currentValue}}}'\n",
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}loose{{/if}}",
   }],
+  ignoreTests: true,
   "packageRules": [
     {
       "matchFileNames": ["**/*.sls"],
