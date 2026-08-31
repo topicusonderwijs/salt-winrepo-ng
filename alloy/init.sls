@@ -7,6 +7,7 @@
 
 {% load_yaml as versions -%}
 # renovate: datasource=github-releases depName=alloy packageName=grafana/alloy
+- 'v1.19.2'
 - 'v1.19.0'
 - 'v1.18.1'
 - 'v1.18.0'
